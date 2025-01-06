@@ -5,10 +5,10 @@ const guildId = process.env['server_id'];
 const fs = require('fs');
 
 const commands = [];
-const commandFiles = fs.readdirSync('./commands/utility').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands/utilies').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
-  const command = require(`./commands/utility/${file}`);
+  const command = require(`./commands/utilies/${file}`);
   commands.push(command.data.toJSON());
 }
 
